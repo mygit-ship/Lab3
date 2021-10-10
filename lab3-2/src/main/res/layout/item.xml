@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="800px"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+
+    >
+    <LinearLayout
+        android:layout_width="800px"
+        android:layout_height="700px"
+        android:background="#F4F4F4"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="800px"
+            android:layout_height="200px"
+            android:background="#FEBA32"
+            android:gravity="center"
+            android:text="ANDROID APP"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+
+            android:textStyle="bold">
+        </TextView>
+
+        <EditText
+            android:layout_width="800px"
+            android:layout_height="190px"
+            android:hint="Username"
+            >
+
+        </EditText>
+        <EditText
+            android:layout_width="800px"
+            android:layout_height="190px"
+            android:hint="Password"
+            >
+        </EditText>
+        <TextView
+            android:layout_width="800px"
+            android:layout_height="1px"
+            android:background="#E7E7E7"
+            >
+
+        </TextView>
+        <LinearLayout
+            android:layout_width="800px"
+            android:layout_height="45dp">
+
+            <TextView
+                android:layout_width="400px"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Cancle"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#E7E7E7"
+                >
+            </TextView>
+            <TextView
+                android:layout_width="400px"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Sign in"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/close"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+       
+        
+   
+
+</LinearLayout>
