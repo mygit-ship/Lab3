@@ -156,9 +156,62 @@
         }
 ## lb3-4---创建上下文操作模式(ActionMode)的上下文菜单（代码在lab3-4文件中）
 ### 步骤
-#### （1）：mainactivity.xml文件中设置一个
-#### （2）：
-
+#### （1）：mainactivity.xml文件中设置一个Listview用于总体样式布局
+#### （2）：在项目的layout中新建一个menu文件夹，并在里面新建一个menu.xml菜单资源文件，在里面设置菜单的样式
+             <menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/c"
+        android:title="复制"
+         />
+    <item
+        android:id="@+id/v"
+        android:title="粘贴"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/x"
+        android:title="剪切"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/r"
+        android:title="重命名"
+        app:showAsAction="never" />
+</menu>
+#### （3）添加数据到data变量中，通过适配器adapter将数据放进listview的item中，并给listview注册上下文菜单，加载menu文件后给menu菜单项添加响应的点击事件
+        ListView listView=(ListView) findViewById(R.id.lv);
+        //生成适配器
+        ArrayAdapter adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getData());
+        //应用适配器
+        listView.setAdapter(adapter);
+        //给view注册上下文菜单
+        registerForContextMenu(listView);
+        
+        //加载菜单menu.xml文件中的样式
+           @Override
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+         }
+         //给菜单项添加相应的点击事件
+         @Override
+           public boolean onContextItemSelected(MenuItem item) {
+               switch (item.getItemId()) {
+                   case R.id.c:
+                       Toast.makeText(this, "点击复制", Toast.LENGTH_SHORT).show();
+                       break;
+                   case R.id.v:
+                       Toast.makeText(this, "点击粘贴", Toast.LENGTH_SHORT).show();
+                       break;
+                   case R.id.x:
+                       Toast.makeText(this, "点击剪切", Toast.LENGTH_SHORT).show();
+                       break;
+                   case R.id.r:
+                       Toast.makeText(this, "点击重命名", Toast.LENGTH_SHORT).show();
+                       break;
+               }
+               return true;
+           }
 
 
 
