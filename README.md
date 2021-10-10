@@ -35,6 +35,7 @@
 #### （2）：新建一个item.xml文件，用来设置aletdialog样式，总体样式依照实验所给的图片进行设计
 #### （3）：将item的样式应用到aletdialog中，并进行应用
 #### （4）:具体代码为
+
               //获取button组件
               Button botton=findViewById(R.id.button);
               //添加点击事件
@@ -66,7 +67,8 @@
 ### 步骤
 #### （1）：mainactivity.xml文件中设置一个textview，显示一段“用于测试的文字”
 #### （2）：在项目的layout中新建一个menu文件夹，并在里面新建一个menu.xml菜单资源文件，在里面设置菜单的样式
-            <menu xmlns:android="http://schemas.android.com/apk/res/android"
+            
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/mune_enter"
@@ -117,7 +119,9 @@
     </item>
 
 </menu>
+
 #### （3）：在java代码中导入菜单布局，并添加菜单项点击事件
+
         public boolean onCreateOptionsMenu(Menu menu) {
         //导入菜单布局
         MenuInflater    inflater=getMenuInflater();
@@ -154,11 +158,13 @@
                }
         return true;
         }
+        
 ## lb3-4---创建上下文操作模式(ActionMode)的上下文菜单（代码在lab3-4文件中）
 ### 步骤
 #### （1）：mainactivity.xml文件中设置一个Listview用于总体样式布局
 #### （2）：在项目的layout中新建一个menu文件夹，并在里面新建一个menu.xml菜单资源文件，在里面设置菜单的样式
-             <menu xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/c"
@@ -177,7 +183,9 @@
         android:title="重命名"
         app:showAsAction="never" />
 </menu>
-#### （3）添加数据到data变量中，通过适配器adapter将数据放进listview的item中，并给listview注册上下文菜单，加载menu文件后给menu菜单项添加响应的点击事件
+
+#### （3）：添加数据到data变量中，通过适配器adapter将数据放进listview的item中，并给listview注册上下文菜单，加载menu文件后给menu菜单项添加响应的点击事件
+
         ListView listView=(ListView) findViewById(R.id.lv);
         //生成适配器
         ArrayAdapter adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getData());
